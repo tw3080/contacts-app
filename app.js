@@ -2,14 +2,19 @@ $(document).ready(function() {
   // Objects
   var contactsList = [];
 
+  // Clear form input fields
   function clearInput() {
-  	$("#first-name").val('');
-    $("#last-name").val('');
-    $("#phone-number").val('');
-    $("#street").val('');
-    $("#city").val('');
-    $("#state").val('');
+  	$('#first-name').val('');
+    $('#last-name').val('');
+    $('#phone-number').val('');
+    $('#street').val('');
+    $('#city').val('');
+    $('#state').val('');
   }
+
+  // Hide 'contacts' and 'contact-details' sections on page load
+  $('.contact-list').addClass('hide');
+  $('.contact-info').addClass('hide');
 
   // Events
   $('#add').click(function() {
@@ -26,9 +31,16 @@ $(document).ready(function() {
     contactDetails['street'] = street;
     contactDetails['city'] = city;
     contactDetails['state'] = state;
-    console.log(firstName + " " + lastName);
-    $('#contact-list').append('<li>' + firstName + " " + lastName + '</li>');
+    $('.contact-list').addClass('show');
+    $('#contact-list').append('<li><a href="#">' + firstName + " " + lastName + '</a></li>');
+    $('.contact-info').append('First name: ' + firstName + '<br>' + 'Last Name: ' + lastName + '<br>');
     contactsList.push(contactDetails);
+    console.log(contactsList);
     clearInput();
+
+    // Show contact details after clicking contacts list
+    $('a').click(function() {
+      $('.contact-info').addClass('show');
+    });
   });
 });
