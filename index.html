@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacts</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Main container -->
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Contacts</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Add a contact:</h2>
+        <form>
+          <div class="form-group">
+            <label for="first-name">First name</label>
+            <input type="text" class="form-control" id="first-name" required/>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last name</label>
+            <input type="text" class="form-control" id="last-name" required/>
+          </div>
+          <div class="form-group">
+            <label for="phone-number">Phone number</label>
+            <input type="text" class="form-control" id="phone-number" required/>
+          </div>
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" id="street" required/>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" required/>
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state" required/>
+          </div>
+        </form>
+        <button class="btn btn-primary" type="submit" id="add">Add</button>
+        <h2>Contacts:</h2>
+        <ul id="contact-list">
+        </ul>
+      </div>
+      <div class="col-med-4">
+        <h2>Contact details</h2>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
