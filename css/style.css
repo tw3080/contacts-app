@@ -1,0 +1,9 @@
+.container {
+  background-color: #dedede;
+  width: 60em;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
