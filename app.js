@@ -1,6 +1,8 @@
 $(document).ready(function() {
+
   // Objects
   var contactsList = [];
+  var counter = 0;
 
   // Clear form input fields
   function clearInput() {
@@ -14,10 +16,11 @@ $(document).ready(function() {
 
   // Hide 'contacts' and 'contact-details' sections on page load
   $('.contact-list').addClass('hide');
-  $('.contact-info').addClass('hide');
+  // $('.contact-info').addClass('hide');
 
   // Events
   $('#add').click(function() {
+    counter++;
     var firstName = $('#first-name').val();
     var lastName = $('#last-name').val();
     var phoneNumber = $('#phone-number').val();
@@ -32,7 +35,7 @@ $(document).ready(function() {
     contactDetails['city'] = city;
     contactDetails['state'] = state;
     $('.contact-list').addClass('show');
-    $('#contact-list').append('<li><a href="#">' + firstName + " " + lastName + '</a></li>');
+    $('#contact-list').append('<li><a href="#" data-index="' + counter + '">' + firstName + " " + lastName + '</a></li>');
     $('.contact-info').append('First name: ' + firstName + '<br>' + 'Last Name: ' + lastName + '<br>');
     contactsList.push(contactDetails);
     console.log(contactsList);
@@ -40,7 +43,9 @@ $(document).ready(function() {
 
     // Show contact details after clicking contacts list
     $('a').click(function() {
-      $('.contact-info').addClass('show');
+      var contactIndex = $(this).data('index');
+      console.log(contactIndex);
+      $('.contact-info[data-index="' + contactIndex + '"]').css('color', 'blue');
     });
   });
 });
